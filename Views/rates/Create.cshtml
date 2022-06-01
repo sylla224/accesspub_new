@@ -1,0 +1,74 @@
+﻿@model accesspubnew.Models.rate
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/jqueryui/jquery-ui.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/dist/js/bootstrap-datepicker.js"></script>
+<link href="~/lib/bootstrap/css/bootstrap-datepicker.css" rel="stylesheet" />
+<h1>Create</h1>
+
+<h4>rate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="rate_code" class="control-label"></label>
+                <input asp-for="rate_code" class="form-control" />
+                <span asp-validation-for="rate_code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rate_achat" class="control-label"></label>
+                <input asp-for="rate_achat" class="form-control" />
+                <span asp-validation-for="rate_achat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rate_vente" class="control-label"></label>
+                <input asp-for="rate_vente" class="form-control" />
+                <span asp-validation-for="rate_vente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="date_jour" class="control-label"></label>
+                <input asp-for="date_jour" class="form-control datepicker" data-provide="datepicker" data-date-format="dd-mm-yyyy" data-date-today-highlight="true" />
+                <span asp-validation-for="date_jour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script src="~/lib/jqueryui/jquery-ui.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //$.fn.datepicker.defaults = {
+        //    days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+        //    daysShort: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+        //    daysMin: ["d", "l", "ma", "me", "j", "v", "s"],
+        //    months: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+        //    monthsShort: ["janv.", "févr.", "mars", "avril", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
+        //    today: "Aujourd'hui",
+        //    monthsTitle: "Mois",
+        //    clear: "Effacer",
+        //    weekStart: 1,
+        //    format: "dd/mm/yyyy"
+        //};
+
+        $('.datepicker').datepicker({
+            format: 'mm-ddd-yyyy',
+            startDate: '-3d'
+        });
+    });
+</script>
+

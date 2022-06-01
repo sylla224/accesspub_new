@@ -1,0 +1,54 @@
+﻿@model IEnumerable<accesspubnew.Models.rate>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h1>Liste des Devises</h1>
+
+<p>
+    <a asp-action="Create">Nouveau</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.rate_code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rate_achat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rate_vente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date_jour)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.rate_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rate_achat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rate_vente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date_jour)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">supperimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

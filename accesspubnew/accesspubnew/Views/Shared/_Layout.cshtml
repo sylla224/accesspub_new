@@ -1,0 +1,77 @@
+﻿@model accesspubnew.Models.RateViewModel
+@{ 
+    var rate = ViewData["rate"] as accesspubnew.Models.RateViewModel;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - accesspubnew</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    
+    <link href="~/content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="background-color: #ff7d24;">
+            <div class="container">
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
+                                <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;taux: @rate.date_jour</span></div>
+                                <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"> <span class="dot"></span><a href="#" style="color:black;font-size:50px;"><span style="color:darkblue">USD</span>&nbsp;&nbsp;Achat: <sup>@rate.rate_achat_usd </sup> &nbsp;&nbsp; Vente : <sup>@rate.rate_vente_usd</sup> </a> &nbsp;&nbsp; <a href="#" style="color:black;font-size:50px;">&nbsp;&nbsp;&nbsp;&nbsp; <span class="dot"></span><span style="color:darkblue">EUR</span>&nbsp; Achat: <sup>@rate.rate_achat_eur</sup>&nbsp;&nbsp; Vente : <sup>@rate.rate_vente_eur</sup> </a> <a href="#"></a> </marquee>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - accesspubnew - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="background-color: #ff7d24;position:relative;top:-27px;">
+        <div class="container">
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
+                            <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;taux: @rate.date_jour</span></div>
+                            <marquee class="news-scroll" behavior="scroll" direction="right" onmouseover="this.stop();" onmouseout="this.start();"> <span class="dot"></span><a href="#" style="color:black;font-size:50px;"><span style="color:darkblue">USD</span>&nbsp;&nbsp;Achat:<sup>@rate.rate_achat_usd</sup> &nbsp;&nbsp; Vente :<sup>@rate.rate_vente_usd</sup> </a> &nbsp;&nbsp;  <a href="#" style="color:black;font-size:50px;">&nbsp;&nbsp;&nbsp;&nbsp; <span class="dot"></span><span style="color:darkblue">EUR</span>&nbsp; Achat:<sup>@rate.rate_achat_eur</sup>&nbsp;&nbsp; Vente : <sup>@rate.rate_vente_eur</sup></a> <a href="#"></a> </marquee>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+    <script>
+        //$(document).ready(function () {
+        //    setInterval(function () {
+        //        window.location.reload();
+        //    }, 60000);
+        //})
+    </script>
+</body>
+
+</html>
